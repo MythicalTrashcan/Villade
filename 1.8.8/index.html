@@ -20,9 +20,7 @@
 				if(document.location.href.startsWith("file:")) {
 					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
 				}else {
-					
-					// %%%%%%%%% launch options %%%%%%%%%%%%
-					
+					const relayId = Math.floor(Math.random() * 3);
 					window.eaglercraftXOpts = {
 						container: "game_frame",
 						assetsURI: "assets.epk",
@@ -38,8 +36,6 @@
 							}
 						]
 					};
-
-					// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 					
 					var q = window.location.search;
 					if(typeof q === "string" && q.startsWith("?")) {
@@ -49,7 +45,6 @@
 					}
 					
 					main();
-					
 				}
 			});
 		</script>
