@@ -34,7 +34,29 @@
 								addr: "wss://proxy.theludos.com/",
 								name: "Myth's EaglerProxy"
 							}
-						]
+						],
+						"relays": [
+	                        {
+                                "addr": "wss://relay.theludos.com/",
+                                "comment": "Myth's EaglerRelay",
+								"primary": true
+                            },
+                            {
+                                "addr": "wss://relay.deev.is/",
+                                "comment": "LAX1DUDE's Shared World Relay #1",
+								"primary": false
+                            },
+                            {
+                                "addr": "wss://relay.lax1dude.net/",
+                                "comment": "LAX1DUDE's Shared World Relay #2",
+								"primary": false
+                            },
+                            {
+                                "addr": "wss://relay.shhnowisnottheti.me/",
+                                "comment": "ayunami's Public Relay",
+								"primary": false
+                            }
+                        ]
 					};
 					
 					var q = window.location.search;
