@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Eaglercraft Alpha 1.2.6 | Ludos</title>
+    <title>Alpha v1.2.6</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Play Minecraft Alpha 1.2.6 in your browser! This is Eaglercraft, created by LAX1DUDE and ayunami2000" />
-    <meta name="keywords" content="minecraft, applet, singleplayer, chromebook, lax1dude, games, eaglercraft, ealgercraft singleplayer, eagler" />
-    <meta name="author" content="LAX1DUDE" />
-    <meta property="og:title" content="Eaglercraft Alpha 1.2.6" />
-    <meta property="og:locale" content="en-US" />
-    <meta property="og:type" content="website" />
-    <link type="image/png" rel="shortcut icon" href="favicon.png" />
-    <meta property="og:image" content="https://media.discordapp.net/attachments/378764518081429506/982903386380853258/screenshot_singleplayer_small.png" />
-    <meta property="og:description" content="Play Minecraft Alpha 1.2.6 in your browser! This is Eaglercraft, created by LAX1DUDE and ayunami2000" />
-    <script type="text/javascript" charset="utf-8" src="app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
     <script type = text/javascript>
-	window.addEventListener("load", function() {
-		window.classicConfig = ["game","resources.mc"];
-  		main();
-	});
-    </script>
+		window.addEventListener("load", function() {
+			window.config = {
+				gameContainer: "game", assetsLocation: "resources.mc", playerUsername: null, serverIP: null, joinServerOnLaunch: false
+			};
+			main();
+		});
+
+	    document.esc = false;
+	    document.addEventListener('keydown', function(e) {
+  		if (e.key === 'Escape') {
+			e.preventDefault();
+    			document.esc = true;
+  		}
+	    });
+
+	    document.addEventListener('keyup', function(e) {
+  		if (e.key === 'Escape') {
+			e.preventDefault();
+    			document.esc = false;
+  		}
+	    });
+        </script>
   </head>
 <body style="margin:0px;width:100vw;height:100vh;" id="game">
 </body>
