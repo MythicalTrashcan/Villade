@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;background-color:black;">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Play Minecraft 1.12.2 in your browser! This is EaglercraftX, created by LAX1DUDE and ayunami2000" />
+		<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.12, 1.12.2" />
+		<title>EaglercraftX 1.12.2 WASM | Ludos</title>
+		<meta property="og:locale" content="en-US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="EaglercraftX 1.12.2" />
+		<meta property="og:description" content="Play Minecraft 1.12.2 in your browser! This is EaglercraftX, created by LAX1DUDE, ayunami2000, and PeytonPlayz585" />
+		<meta property="og:image" content="favicon.png" />
+		<meta name="google-adsense-account" content="ca-pub-1576606614118788">
+		<!-- Google JSPI token (theludos.com) -->
+		<meta http-equiv="origin-trial" content="Aohq49w66jMewyUZO8juYqNpX1b4WR9rKuBlV3IwDW6d6ESrqiwkrWEKroX2Z5SNI62HrA3vu/kAsRa6twoXIAoAAAB4eyJvcmlnaW4iOiJodHRwczovL3RoZWx1ZG9zLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViQXNzZW1ibHlKU1Byb21pc2VJbnRlZ3JhdGlvbiIsImV4cGlyeSI6MTc1MzE0MjQwMCwiaXNTdWJkb21haW4iOnRydWV9">
+		<!-- Microsoft JSPI token (theludos) -->
+		<meta http-equiv="origin-trial" content="AzgKjAzRDUk6Me+GymWmfL+98oRGtj7fh8FT3Mj9iKHiLSLj53/gBJWu7oWd5AuL1UeA8NL7CM8FI0ZHgiNXcPwAAAB4eyJvcmlnaW4iOiJodHRwczovL3RoZWx1ZG9zLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViQXNzZW1ibHlKU1Byb21pc2VJbnRlZ3JhdGlvbiIsImV4cGlyeSI6MTc0NDI0MDE0MywiaXNTdWJkb21haW4iOnRydWV9">
+		<!-- Google JSPI token (anythingthat.works) -->
+		<meta http-equiv="origin-trial" content="AqbUxFyCwqG6ELp8aX4kGGWRKW8uncexCI2IiKdShwpecOatlGh80Ec3hFtDUajg/hpgGsAZfhv+NNqfItI8RwkAAAB+eyJvcmlnaW4iOiJodHRwczovL2FueXRoaW5ndGhhdC53b3Jrczo0NDMiLCJmZWF0dXJlIjoiV2ViQXNzZW1ibHlKU1Byb21pc2VJbnRlZ3JhdGlvbiIsImV4cGlyeSI6MTc1MzE0MjQwMCwiaXNTdWJkb21haW4iOnRydWV9">
+		<!-- Microsoft JSPI token (anythingthat.works) -->
+		<meta http-equiv="origin-trial" content="A2CW1fk3k9AF8TFX+hzDUJPPqzWXPX9HTyZjOzZYOJH4MTzVi56N5q4G/8aamkVLGTOUCQ06VniVO9sy42jqzOoAAAB+eyJvcmlnaW4iOiJodHRwczovL2FueXRoaW5ndGhhdC53b3Jrczo0NDMiLCJmZWF0dXJlIjoiV2ViQXNzZW1ibHlKU1Byb21pc2VJbnRlZ3JhdGlvbiIsImV4cGlyeSI6MTc0NDkwNTI4NCwiaXNTdWJkb21haW4iOnRydWV9">
+		<link type="image/png" rel="shortcut icon" href="favicon.png" />
+		<script type="text/javascript" src="bootstrap.js"></script>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1576606614118788"
+     crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			"use strict";
+			window.addEventListener("load", function() {
+				if(window.location.href.indexOf("file:") === 0) {
+					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+				}else {
+					
+					// %%%%%%%%% launch options %%%%%%%%%%%%
+					
+					var relayId = Math.floor(Math.random() * 3);
+					window.eaglercraftXOpts = {
+						demoMode: false,
+						container: "game_frame",
+						assetsURI: "assets.epw",
+						worldsDB: "worlds",
+						servers: [
+							{
+								addr: "wss://mc.theludos.com/",
+								name: "Myth's EagMP"
+							},
+							{
+								addr: "wss://proxy.theludos.com/",
+								name: "Myth's EaglerProxy"
+							}
+						],
+						relays: [
+	                        {
+                                "addr": "wss://relay.theludos.com/",
+                                "comment": "Myth's EaglerRelay",
+								"primary": true
+                            },
+                            {
+                                "addr": "wss://relay.deev.is/",
+                                "comment": "LAX1DUDE's Shared World Relay #1",
+								"primary": false
+                            },
+                            {
+                                "addr": "wss://relay.lax1dude.net/",
+                                "comment": "LAX1DUDE's Shared World Relay #2",
+								"primary": false
+                            },
+                            {
+                                "addr": "wss://relay.shhnowisnottheti.me/",
+                                "comment": "ayunami's Public Relay",
+								"primary": false
+                            }
+                        ]
+					};
+					
+					// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+					
+					var q = window.location.search;
+					if((typeof q === "string") && q[0] === "?" && (typeof window.URLSearchParams !== "undefined")) {
+						q = new window.URLSearchParams(q);
+						var s = q.get("server");
+						if(s) window.eaglercraftXOpts.joinServer = s;
+					}
+					
+					main();
+					
+				}
+			});
+		</script>
+	</head>
+	<body style="margin:0px;width:100%;height:100%;overflow:hidden;background-color:black;" id="game_frame"></body>
+</html>
